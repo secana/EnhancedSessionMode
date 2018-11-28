@@ -13,7 +13,7 @@ rpmdev-setuptree
 dnf download --sourc xrdp
 rpm -ivh xrdp*.src.rpm
 sudo dnf builddep xrdp
-sed -i '/%configure --enable-fuse/s/$/ --enable-vsock' ~/rpmbuild/SPECS/xrdp.spec
+sed -i '/^%configure/ s/$/ --enable-vsock/' ~/rpmbuild/SPECS/xrdp.spec
 rpmbuild -bb ~/rpmbuild/SPECS/xrdp.spec
 
 # Install XRDP with Hyper-V enabled
