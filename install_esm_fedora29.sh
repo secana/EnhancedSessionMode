@@ -21,7 +21,7 @@ sudo dnf install -y ~/rpmbuild/RPMS/x86_64/xrdp*.rpm
 sudo systemctl enable xrdp
 sudo systemctl start xrdp
 
-# Confgure xrdp
+# Configure xrdp
 sudo sed -i "/^use_vsock=.*/c\use_vsock=true" /etc/xrdp/xrdp.ini
 sudo sed -i "/^security_layer=.*/c\security_layer=rdp" /etc/xrdp/xrdp.ini
 sudo sed -i "/^crypt_level=.*/c\crypt_level=none" /etc/xrdp/xrdp.ini
@@ -30,6 +30,10 @@ sudo sed -i "/^max_bpp=.*/c\max_bpp=24" /etc/xrdp/xrdp.ini
 
 sudo sed -i "/^X11DisplayOffset=.*/c\X11DisplayOffset=0" /etc/xrdp/sesman.ini
 echo "allowed_users=anybody" | sudo tee -a /etc/X11/Xwrapper.conf > /dev/null
+
+# Prevent dnf from reinstalling or upgrading xrdp to a version without Hyper-V support
+echo "exclude=xrdp" | sudo tee -a /etc/dnf/dnf.conf
+
 
 
 
