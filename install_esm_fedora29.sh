@@ -17,6 +17,8 @@ sed -i '/^%configure/ s/$/ --enable-vsock/' ~/rpmbuild/SPECS/xrdp.spec
 rpmbuild -bb ~/rpmbuild/SPECS/xrdp.spec
 
 # Install XRDP with Hyper-V enabled
+rm -f ~/rpmbuild/RPMS/x86_64/xrdp-d*
+rm -f ~/rpmbuild/RPMS/x86_64/xrdp-s*
 sudo dnf install -y ~/rpmbuild/RPMS/x86_64/xrdp*.x86_64.rpm
 sudo systemctl enable xrdp
 sudo systemctl start xrdp
