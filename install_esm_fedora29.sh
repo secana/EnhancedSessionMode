@@ -10,14 +10,14 @@ sudo sed -i 's/SELINUX=enforcing/SELINUX=permissive/g' /etc/sysconfig/selinux
 # Recompile XRDP with Hyper-V enabled
 sudo dnf install -y rpmdevtools rpm-build
 rpmdev-setuptree
-dnf download --sourc xrdp
+dnf download --source xrdp
 rpm -ivh xrdp*.src.rpm
-sudo dnf builddep xrdp
+sudo dnf builddep -y xrdp
 sed -i '/^%configure/ s/$/ --enable-vsock/' ~/rpmbuild/SPECS/xrdp.spec
 rpmbuild -bb ~/rpmbuild/SPECS/xrdp.spec
 
 # Install XRDP with Hyper-V enabled
-sudo dnf install -y ~/rpmbuild/RPMS/x86_64/xrdp*.rpm
+sudo dnf install -y ~/rpmbuild/RPMS/x86_64/xrdp*.x86_64.rpm
 sudo systemctl enable xrdp
 sudo systemctl start xrdp
 
@@ -32,7 +32,7 @@ sudo sed -i "/^X11DisplayOffset=.*/c\X11DisplayOffset=0" /etc/xrdp/sesman.ini
 echo "allowed_users=anybody" | sudo tee -a /etc/X11/Xwrapper.conf > /dev/null
 
 # Prevent dnf from reinstalling or upgrading xrdp to a version without Hyper-V support
-echo "exclude=xrdp" | sudo tee -a /etc/dnf/dnf.conf
+echo "exclude=xrdp" | sudo tee -a /etc/dnf/dnf.conf > /dev/null
 
 
 
