@@ -1,4 +1,4 @@
-# Install Hyper-V Enhanced Session Mode on Fedora 29
+# Install Hyper-V Enhanced Session Mode on Fedora 30
 
 # Load the Hyper-V kernel module
 echo "hv_sock" | sudo tee -a /etc/modules-load.d/hv_sock.conf > /dev/null
@@ -31,7 +31,7 @@ sudo sed -i "/^bitmap_compression=.*/c\bitmap_compression=false" /etc/xrdp/xrdp.
 sudo sed -i "/^max_bpp=.*/c\max_bpp=24" /etc/xrdp/xrdp.ini
 
 sudo sed -i "/^X11DisplayOffset=.*/c\X11DisplayOffset=0" /etc/xrdp/sesman.ini
-echo "allowed_users=anybody" | sudo tee -a /etc/X11/Xwrapper.conf > /dev/null
+echo "allowed_users=anybody" | sudo tee -a /etc/X11/Xwrapper.config > /dev/null
 
 # Prevent dnf from reinstalling or upgrading xrdp to a version without Hyper-V support
 echo "exclude=xrdp" | sudo tee -a /etc/dnf/dnf.conf > /dev/null

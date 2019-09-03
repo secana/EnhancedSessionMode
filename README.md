@@ -2,11 +2,11 @@
 
 Contains scripts to enable "Hyper-V Enhanced Session Mode" for Linux
 
-## Fedora 29
+## Fedora
 
-This tutorial shows how to install and configure **Enhanced Session Mode** on **Fedora 29**. The script was not tested on older Fedora versions but should work there, too.
+This tutorial shows how to install and configure **Enhanced Session Mode** on **Fedora**. The script was not tested on older Fedora versions than 29.
 
-Form more information have a look at the correpsondig blog post for [Enhanced Session Mode under Fedora 28](https://secanablog.wordpress.com/2018/10/24/enhanced-session-mode-under-fedora-28/).
+Form more information have a look at the corresponding blog post for [Enhanced Session Mode under Fedora 28](https://secanablog.wordpress.com/2018/10/24/enhanced-session-mode-under-fedora-28/).
 
 ### Clone repository
 
@@ -22,7 +22,11 @@ cd EnhancedSessionMode
 Run the script to install and configure **XRDP**. This may take some time and you need **sudo** rights on your machine.
 
 ```bash
+# Fedora 29
 ./install_esm_fedora29.sh
+
+# Fedora 30
+ ./install_esm_fedora29.sh
 ```
 
 After the scripts ran successfully, shutdown your **Fedora** VM.
