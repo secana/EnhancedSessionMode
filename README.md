@@ -22,11 +22,9 @@ cd EnhancedSessionMode
 Run the script to install and configure **XRDP**. This may take some time and you need **sudo** rights on your machine.
 
 ```bash
-# Fedora 29
-./install_esm_fedora29.sh
-
-# Fedora 30
- ./install_esm_fedora29.sh
+# Fedora 29, 30 or 31
+eval "$(grep VERSION_ID /etc/os-release)"
+./install_esm_fedora${VERSION_ID}.sh
 ```
 
 After the scripts ran successfully, shutdown your **Fedora** VM.
