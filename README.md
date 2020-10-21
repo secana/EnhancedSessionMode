@@ -2,11 +2,19 @@
 
 Contains scripts to enable "Hyper-V Enhanced Session Mode" for Linux
 
-## Fedora
+## Fedora & CentOS
 
 This tutorial shows how to install and configure **Enhanced Session Mode** on **Fedora**. The script was not tested on older Fedora versions than 29.
 
 Form more information have a look at the corresponding blog post for [Enhanced Session Mode under Fedora 28](https://secanablog.wordpress.com/2018/10/24/enhanced-session-mode-under-fedora-28/).
+
+Supported are currently:
+
+- CentOS 7
+- Fedora 29
+- Fedora 30
+- Fedora 31
+- Fedora 32
 
 ### Clone repository
 
@@ -22,7 +30,7 @@ cd EnhancedSessionMode
 Run the script to install and configure **XRDP**. This may take some time and you need **sudo** rights on your machine.
 
 ```bash
-# CentOS 7 or Fedora 29/30/31
+# CentOS 7 or Fedora 29/30/31/32
 source /etc/os-release
 ./install_esm_${ID}${VERSION_ID}.sh
 ```
@@ -37,4 +45,4 @@ On your Windows host system, open a **elevated PowerShell** (with administrator 
 Set-VM -VMName "Fedora VM Name" -EnhancedSessionTransportType HvSocket
 ```
 
-Now, start your **Fedora** VM and the UI to configure the enhanced session mode should pop up. Make sure you uncheck *Printers* in the *Show Options --> Local Resources* and save your setting.
+Now, start your **Fedora** VM and the UI to configure the enhanced session mode should pop up. Make sure you uncheck _Printers_ in the _Show Options --> Local Resources_ and save your setting.
