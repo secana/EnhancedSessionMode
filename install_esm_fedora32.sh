@@ -6,7 +6,7 @@ if ! [ -f "/etc/modules-load.d/hv_sock.conf" ] || [ "$(cat /etc/modules-load.d/h
   echo "hv_sock" | sudo tee -a /etc/modules-load.d/hv_sock.conf > /dev/null
 fi
 
-sudo dnf install -y xrdp
+sudo dnf install -y xrdp xrdp-selinux
 sudo systemctl enable xrdp
 sudo systemctl start xrdp
 
