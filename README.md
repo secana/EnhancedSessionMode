@@ -46,3 +46,7 @@ Set-VM -VMName "Fedora VM Name" -EnhancedSessionTransportType HvSocket
 ```
 
 Now, start your **Fedora** VM and the UI to configure the enhanced session mode should pop up. Make sure you uncheck _Printers_ in the _Show Options --> Local Resources_ and save your setting.
+
+### GDM dependency
+
+Don't disable GDM or RDP login won't work
