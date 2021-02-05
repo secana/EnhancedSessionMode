@@ -11,8 +11,7 @@ Form more information have a look at the corresponding blog post for [Enhanced S
 Supported are currently:
 
 - CentOS 7
-- Fedora 29
-- Fedora 30 - 33
+- Fedora 29 - 33
 
 ### Clone repository
 
