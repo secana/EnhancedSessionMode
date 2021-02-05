@@ -12,9 +12,7 @@ Supported are currently:
 
 - CentOS 7
 - Fedora 29
-- Fedora 30
-- Fedora 31
-- Fedora 32
+- Fedora 30 - 33
 
 ### Clone repository
 
@@ -30,7 +28,8 @@ cd EnhancedSessionMode
 Run the script to install and configure **XRDP**. This may take some time and you need **sudo** rights on your machine.
 
 ```bash
-# CentOS 7 or Fedora 29/30/31/32
+# CentOS 7 or Fedora 29/30/31/32/33
+# For Fedora 31 and up there is just one script as it works on all verions
 source /etc/os-release
 ./install_esm_${ID}${VERSION_ID}.sh
 ```
