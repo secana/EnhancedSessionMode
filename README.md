@@ -28,7 +28,7 @@ Run the script to install and configure **XRDP**. This may take some time and yo
 
 ```bash
 # CentOS 7 or Fedora 29/30/31/32/33
-# For Fedora 31 and up there is just one script as it works on all verions
+# For Fedora 32 and up there is just one script as it works on all verions
 source /etc/os-release
 ./install_esm_${ID}${VERSION_ID}.sh
 ```
